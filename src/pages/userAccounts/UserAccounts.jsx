@@ -8,7 +8,11 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  FormControl,
+  InputLabel,
+  MenuItem,
   Pagination,
+  Select,
   Snackbar,
   TextField,
   Typography,
@@ -16,10 +20,15 @@ import {
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import ListTable from "../../components/ui/listtable/ListTable";
 import TitleBar from "../../components/ui/titleBar/TitleBar";
 import Topbar from "../../components/ui/topbar/Topbar";
-import { fetchUserAccounts } from "../../redux/userAccountsSlice";
+import {
+  changeRoleAccount,
+  fetchUserAccounts,
+} from "../../redux/userAccountsSlice";
+import { fetchUserRoles } from "../../redux/userRolesSlice";
 import "../../styles/_variables.scss"; // Import the variables
 import Main from "../../utils/main/Main";
 
@@ -29,6 +38,7 @@ const UserAccounts = () => {
   const { accounts, status, error } = useSelector(
     (state) => state.userAccounts
   );
+  const { roles } = useSelector((state) => state.userRoles);
   const [page, setPage] = useState(1);
   const itemsPerPage = 10;
   const [open, setOpen] = useState(false);
@@ -45,11 +55,6 @@ const UserAccounts = () => {
     setPage(value);
   };
 
-  const handleDeleteClick = (account) => {
-    setSelectedAccount(account);
-    setOpen(true);
-  };
-
   const handleClose = () => {
     setOpen(false);
     setSelectedAccount(null);
@@ -63,12 +68,24 @@ const UserAccounts = () => {
     setSearchTerm(event.target.value);
   };
 
+  const handleRoleChange =async (accountId, newRoleId) => {
+    try {
+     await  dispatch(changeRoleAccount({ id: accountId, name: newRoleId })).unwrap();
+     toast.success("Thay đổi vai trò thành công");
+       dispatch(fetchUserAccounts());
+    } catch (error) {
+      toast.error("Thay đổi vai trò thất bại");
+      console.log(error);
+    }
+  };
+
   const filteredAccounts = accounts.filter((account) =>
     account.user_name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   useEffect(() => {
     dispatch(fetchUserAccounts());
+    dispatch(fetchUserRoles());
   }, [dispatch]);
 
   useEffect(() => {
@@ -100,9 +117,12 @@ const UserAccounts = () => {
                 size="small"
                 value={searchTerm}
                 onChange={handleSearchChange}
-                InputLabelProps={{ style: { color: "var(--textColor)",
-                  borderColor: "var(--textColor)"
-                 } }}
+                InputLabelProps={{
+                  style: {
+                    color: "var(--textColor)",
+                    borderColor: "var(--textColor)",
+                  },
+                }}
                 InputProps={{ style: { color: "var(--textColor)" } }}
               />
             </div>
@@ -172,7 +192,25 @@ const UserAccounts = () => {
                       </td>
                       <td className="table_Cell">{account.user_name}</td>
                       <td className="table_Cell">{account.email}</td>
-                      <td className="table_Cell">{account.role.name}</td>
+
+                      <td className="table_Cell">
+                        <FormControl fullWidth variant="outlined" size="small">
+                          <InputLabel>Vai Trò</InputLabel>
+                          <Select
+                            value={account?.role?.name}
+                            onChange={(e) =>
+                              handleRoleChange(account._id, e.target.value)
+                            }
+                            label="Vai Trò"
+                          >
+                            {roles.map((role, index) => (
+                              <MenuItem key={index} value={role.name}>
+                                {role.name}
+                              </MenuItem>
+                            ))}
+                          </Select>
+                        </FormControl>
+                      </td>
                     </tr>
                   ))}
                 </tbody>

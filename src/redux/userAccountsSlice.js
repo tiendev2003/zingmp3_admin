@@ -69,6 +69,23 @@ export const deleteUserAccount = createAsyncThunk(
   }
 );
 
+export const changeRoleAccount = createAsyncThunk(
+  "userAccounts/changeRoleAccount",
+  async (data, { rejectWithValue }) => {
+    try {
+      console.log(data);
+      const response = await axiosClient.put(`/api/account/change-role`, {
+        id: data.id,
+        newRole: data.name,
+      });
+      console.log(response.data);
+      return { id: data.id, newRole: data.name };
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
+  }
+);
+
 const userAccountsSlice = createSlice({
   name: "userAccounts",
   initialState: {
@@ -123,6 +140,15 @@ const userAccountsSlice = createSlice({
       state.account = action.payload;
     });
     builder.addCase(fetchUserAccountById.rejected, (state, action) => {
+      state.status = "failed";
+      state.error = action.payload;
+    });
+    builder.addCase(changeRoleAccount.fulfilled, (state, action) => {
+      
+      state.status = "succeeded";
+      state.error = null;
+    });
+    builder.addCase(changeRoleAccount.rejected, (state, action) => {
       state.status = "failed";
       state.error = action.payload;
     });
