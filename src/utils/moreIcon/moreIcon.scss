@@ -1,0 +1,52 @@
+.moreIcon {
+    border-radius: 4px;
+    padding: .4rem 8px;
+    background-color: transparent;
+    box-shadow: 0px 0px 1px 1px var(--borderColor);
+    position: relative;
+    cursor: pointer;
+    transition: all .2s linear;
+
+    &:hover {
+        background-color: var(--borderColor);
+    }
+
+    svg {
+        font-size: 1rem;
+    }
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: var(--rePrimaryColor);
+    min-width: 180px;
+    border-radius: 5px;
+    text-align: left;
+    top: 120%;
+    right: -70%;
+    z-index: 9;
+    box-shadow: 0px 0px 5px 1px var(--borderColor);
+
+    li {
+        font-size: .85rem;
+        font-weight: 500;
+        color: var(--primaryColor);
+        padding: .5rem;
+        padding-left: 3rem;
+        line-height: 1.5;
+        transition: all .2s linear;
+
+        &:hover {
+            background-color: var(--borderColor);
+        }
+    }
+}
+
+@media (max-width:550px) {
+    .dropdown-content {
+        min-width: 200px;
+        right: 0%;
+        left: 100%;
+        transform: translateX(-100%);
+    }
+}

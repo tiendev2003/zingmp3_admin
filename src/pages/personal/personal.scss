@@ -1,0 +1,78 @@
+.personal {
+    // .dashboard {
+    //     margin-bottom: 1rem;}
+
+    .center {
+        @extend %grid-base;
+
+        .statistics {
+            grid-column: span 12 /span 12;
+
+            .statisBox {
+                padding: 1rem;
+            }
+        }
+
+        .contacts {
+            grid-column: span 3/ span 3;
+
+            .contactBox {
+                padding: 1rem;
+            }
+        }
+    }
+
+    .bottom {
+        @extend %grid-base;
+
+        .lists {
+            grid-column: span 12 /span 12;
+        }
+    }
+
+    .orderDetail {
+
+        .odContainer {
+            padding: 1rem;
+        }
+    }
+}
+
+%grid-base {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+@media (min-width:1100px) {
+    .personal {
+        // .dashboard {
+        //     .dashboardContainer {
+        //         .box {
+        //             grid-column: span 3/ span 3;
+        //         }
+        //     }
+        // }
+
+        .center {
+            .statistics {
+                grid-column: span 6/span 6;
+            }
+
+            .appratio {
+                grid-column: span 3/ span 3;
+            }
+
+            .applicant {
+                grid-column: span 3 / span 3;
+            }
+        }
+
+        .bottom {
+            .lists {
+                grid-column: span 6 /span 6;
+            }
+        }
+    }
+}

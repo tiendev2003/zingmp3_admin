@@ -1,0 +1,72 @@
+.item {
+    color: #1e293b;
+    background-color: #FFFFFF;
+    border: 1px solid rgb(226 232 240);
+    padding: 1rem 1.2rem;
+    position: relative;
+
+    .badge {
+        color: #707AF3;
+        font-size: .75rem;
+        display: inline-flex;
+        align-items: center;
+        gap: .25rem;
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        background: rgb(226, 232, 240);
+        border-radius: 15rem;
+        padding: 0.1rem .5rem;
+        line-height: 1.6;
+
+        svg {
+            font-size: .75rem;
+        }
+    }
+
+    .desc {
+        position: absolute;
+        font-size: .75rem;
+        color: #94a3b8;
+        text-align: end;
+        right: 10px;
+        bottom: 07px;
+    }
+
+    article {
+        display: flex;
+        align-items: center;
+        margin-top: 1.25rem;
+        margin-bottom: 1rem;
+
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.6;
+            width: 3.434rem;
+            height: 3.434rem;
+            background: rgb(226, 232, 240);
+            border-radius: .25rem;
+            padding: .75rem;
+        }
+
+        .right {
+            flex: 1;
+            text-align: center;
+
+            h3 {
+                font-weight: 500;
+                font-size: 1.1rem;
+                line-height: 1.6;
+                text-transform: capitalize;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                line-height: 1.6;
+            }
+        }
+    }
+}

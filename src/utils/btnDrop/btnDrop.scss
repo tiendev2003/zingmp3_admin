@@ -1,0 +1,16 @@
+.btnDrop {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .title {
+        font-size: .9rem;
+        font-weight: 500;
+        color: var(--titleTxtColor);
+        text-transform: capitalize;
+    }
+
+    svg {
+        fill: var(--titleTxtColor);
+    }
+}

@@ -1,0 +1,80 @@
+%common-flex {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    color: var(--primaryColor);
+    background-color: var(--rePrimaryColor);
+    border: 1px solid var(--borderColor);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+
+    .left {
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+
+        }
+    }
+
+    .right {
+        flex: 1;
+
+        .category {
+            font-size: .75rem;
+            font-weight: 500;
+            color: var(--titleTxtColor);
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .info {
+            @extend %common-flex;
+            justify-content: space-between;
+            margin-top: 8px;
+
+            .profile {
+                @extend %common-flex;
+                gap: 6px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+
+                .userName {
+                    font-size: .9rem;
+                    font-weight: 500;
+                    color: var(--titleTxtColor);
+                }
+            }
+
+            .impression {
+                @extend %common-flex;
+                gap: 1rem;
+
+                .rating {
+                    @extend %common-flex;
+                    gap: 4px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import "../../../styles/variables.scss";
+
+.user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin: .5rem 0;
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    .content {
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        .text {
+            display: block;
+
+            .title {
+                display: block;
+                font-size: .875rem;
+                font-weight: 600;
+                color: var(--primaryColor);
+            }
+
+            .desc {
+                max-width: max-content;
+                font-size: .75rem;
+                font-weight: 400;
+                color: #94a3b8;
+            }
+        }
+    }
+
+    .price_box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .price {
+            color: var(--primaryColor);
+            align-self: center;
+            font-size: .85rem;
+            font-weight: 500;
+        }
+    }
+}
+
+// .dark-mode {
+//     .user {
+//         .content {
+//             .text {
+//                 .title {
+//                     color: $white;
+//                 }
+//             }
+//         }
+
+//         .price_box {
+//             .price {
+//                 color: $white;
+//             }
+//         }
+//     }
+// }

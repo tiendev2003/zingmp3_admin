@@ -1,0 +1,87 @@
+%grid-base {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.stocks {
+    .center {
+        @extend %grid-base;
+
+        .statistics {
+            grid-column: span 12/ span 12;
+        }
+
+        .products {
+            grid-column: span 12/ span 12;
+        }
+    }
+
+    .sellBoxContainer {
+        @extend %grid-base;
+    }
+
+    .bottom {
+        @extend %grid-base;
+
+        .lists {
+            grid-column: span 12 /span 12;
+        }
+    }
+}
+
+@media (min-width:1100px) {
+    .stocks {
+
+
+        // .dashboard {
+        //     .dashboardContainer {
+        //         .box {
+        //             grid-column: span 3/ span 3;
+        //         }
+        //     }
+        // }
+
+        // .center {
+        //     .statistics {
+        //         grid-column: span 9/ span 9;
+
+        //     }
+
+        //     .products {
+        //         grid-column: span 3/ span 3;
+        //     }
+        // }
+
+        .bottom {
+            .lists:first-child {
+                grid-column: span 5 /span 5;
+            }
+
+            .lists:last-child {
+                grid-column: span 7 /span 7;
+            }
+
+            .lists {
+                grid-column: span 6 /span 6;
+            }
+        }
+    }
+}
+
+
+@media (min-width:1300px) {
+    .stocks {
+
+        .center {
+            .statistics {
+                grid-column: span 9/ span 9;
+            }
+
+            .products {
+                grid-column: span 3/ span 3;
+            }
+        }
+    }
+}

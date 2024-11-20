@@ -1,0 +1,84 @@
+.sellBox {
+    grid-column: span 12/span 12;
+    padding: 1rem 2rem;
+
+    .txtContent {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--primaryColor);
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 45px;
+                height: 45px;
+                border-radius: 5px;
+                background-color: #DEE0FC;
+
+                svg {
+                    font-size: 1.5rem;
+                    fill: rgb(90, 102, 241);
+                }
+            }
+
+            h4 {
+                color: var(--primaryColor);
+                font-size: 1rem;
+                line-height: 1.6;
+                font-weight: 500;
+            }
+
+            p {
+                color: var(--titleTxtColor);
+                font-size: .75rem;
+                line-height: 1.6;
+            }
+        }
+
+        .right {
+            color: var(--green1);
+            font-size: .85rem;
+            text-align: right;
+
+            p {
+                line-height: 1.6;
+            }
+        }
+    }
+
+    .btnContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        button {
+            color: var(--primaryColor);
+            background-color: rgba(90, 102, 241, .1);
+            padding: .5rem 2.5rem;
+            border-radius: 5px;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .sellBox {
+        grid-column: span 6/span 6;
+        padding: 1rem;
+    }
+
+}
+
+@media (min-width:1400px) {
+    .sellBox {
+        grid-column: span 3/span 3;
+        padding: 1.5rem;
+    }
+}

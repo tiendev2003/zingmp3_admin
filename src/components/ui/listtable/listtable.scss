@@ -1,0 +1,162 @@
+.listtable {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 1rem;
+
+    .table {
+        min-width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+        color: var(--textColor);
+
+        th,
+        td {
+            border: 1px solid var(--borderColor);
+        }
+
+        thead {
+            background-color: var(--mainBG);
+
+            .table_head {
+                text-transform: uppercase;
+                font-size: .75rem;
+                font-weight: 600;
+                padding: .75rem 1rem;
+            }
+        }
+
+        .table_row {
+            width: 100%;
+            font-size: .85rem;
+
+            .table_Cell {
+                font-weight: 500;
+                padding: 1rem;
+
+                .cellWrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 0 1rem;
+
+                    .imgBox {
+                        width: 35px;
+                        height: 35px;
+                        background-color: var(--mainBG);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 3px;
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+                            object-fit: contain;
+                            border-radius: 6px;
+                        }
+                    }
+
+                    .text {
+                        text-align: left;
+
+                        .title {
+                            color: var(--primaryColor);
+                            font-weight: 600;
+                        }
+
+                        .desc {
+                            color: var(--secondColor);
+                            font-size: .75rem;
+                            font-weight: 400;
+                        }
+                    }
+                }
+
+                // .action_btn {
+                //     display: flex;
+                //     justify-content: center;
+                //     gap: .5rem;
+
+                //     .icon {
+                //         width: 35px;
+                //         height: 35px;
+                //         color: rgb(96, 165, 250);
+                //         background: rgba(96, 165, 250, .1);
+                //         display: flex;
+                //         align-items: center;
+                //         justify-content: center;
+                //         border-radius: 50%;
+                //         transition: all .2s linear;
+                //         cursor: pointer;
+                //         position: relative;
+
+                //         &:hover {
+                //             color: #fff;
+                //             background: rgb(96, 165, 250);
+
+                //             .tooltiptext {
+                //                 visibility: visible;
+                //                 opacity: 1;
+                //             }
+                //         }
+
+                //         svg {
+                //             font-size: 1rem;
+                //         }
+
+                //         &:first-child {
+                //             color: #5a66f1;
+                //             background: rgba(90, 102, 241, .1);
+
+                //             &:hover {
+                //                 color: #fff;
+                //                 background: rgb(90, 102, 241);
+                //             }
+                //         }
+
+                //         &:last-child {
+                //             color: rgb(244, 63, 94);
+                //             background: rgba(244, 63, 94, .1);
+
+                //             &:hover {
+                //                 color: #fff;
+                //                 background: rgb(244, 63, 94);
+                //             }
+                //         }
+
+                //         .tooltiptext {
+                //             visibility: hidden;
+                //             background-color: #555;
+                //             color: #fff;
+                //             text-align: center;
+                //             border-radius: 6px;
+                //             padding: 5px;
+                //             position: absolute;
+                //             z-index: 1;
+                //             bottom: 110%;
+                //             left: -5%;
+                //             opacity: 0;
+                //             transition: opacity 0.3s;
+                //         }
+                //     }
+                // }
+
+                // span {
+                //     color: #64748b;
+                //     font-size: .75rem;
+                //     line-height: 1.5;
+                // }
+
+                // p {
+                //     color: #1e293b;
+                //     line-height: 1.5;
+                //     font-size: .85rem;
+                // }
+
+                .price {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

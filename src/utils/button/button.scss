@@ -1,0 +1,16 @@
+.button {
+    font-size: .9rem;
+    text-transform: capitalize;
+    padding: .5rem 1rem;
+    border: 1px solid var(--borderColor);
+    color: var(--titleTxtColor);
+    background-color: var(--rePrimaryColor);
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: all .2s linear;
+
+    &:hover {
+        color: #000;
+        background: #e2e8f0;
+    }
+}

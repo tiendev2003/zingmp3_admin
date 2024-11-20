@@ -1,0 +1,224 @@
+.deskSidebar {
+    height: 100%;
+    background-color: #1E293B;
+    border-right: .1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    right: auto;
+    left: 0;
+    bottom: 0;
+    width: 15rem;
+    z-index: 50;
+    overflow-y: scroll;
+    transition: all .150s cubic-bezier(0, 0, 0.2, 1);
+
+    &:hover {
+        width: 15rem !important;
+
+        .content {
+            .top {
+                display: block !important;
+            }
+
+            .links-list {
+                margin: 0 3rem !important;
+                display: block !important;
+
+                li {
+                    width: 100% !important;
+
+                    svg {
+                        font-size: 1rem !important;
+                    }
+
+                    span {
+                        display: block !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+        width: 5rem;
+
+        .content {
+            .top {
+                display: none;
+            }
+
+            .links-list {
+                margin: 0;
+                display: grid;
+                place-items: center;
+
+                li {
+                    width: 100%;
+
+                    svg {
+                        font-size: 1.25rem;
+                    }
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width:550px) {
+        &.active {
+            width: 3rem;
+        }
+    }
+
+    .logo-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+        border-bottom: .1px solid rgb(255 255 255 / 0.1);
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        margin-top: 2rem;
+
+        .top {
+            font-size: .9rem;
+            color: gray;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            letter-spacing: .5px;
+        }
+
+        .links-list {
+            margin: 0 3rem;
+
+            li {
+               
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                font-size: 1rem;
+                font-weight: 400;
+                color: rgba(148, 163, 184, .85);
+                list-style-type: circle;
+                letter-spacing: 1px;
+                transition: all .2s linear;
+                padding: .85rem 0rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: #fff;
+                }
+
+                svg {
+                    font-size: 1rem;
+                }
+
+                span {
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+
+    .pending {
+        li {
+            color: rgba(148, 163, 184, 0.85) !important;
+        }
+
+    }
+
+    .active {
+        li {
+            color: #fff !important;
+        }
+    }
+}
+
+.mobSidebar {
+    height: 100%;
+    background-color: #1E293B;
+    border-right: .1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    right: auto;
+    left: 0;
+    bottom: 0;
+    width: 15rem;
+    z-index: 50;
+    overflow-y: scroll;
+    transform: translate3d(-100%, 0, 0);
+    transition: all .150s cubic-bezier(0, 0, 0.2, 1);
+
+    .content {
+        margin-top: 2rem;
+
+        .top {
+            font-size: .9rem;
+            color: gray;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            letter-spacing: .5px;
+        }
+
+        .links-list {
+            margin: 0 3rem;
+
+            li {
+                width: 100px;
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                font-size: 1rem;
+                font-weight: 400;
+                color: rgba(148, 163, 184, .85);
+                list-style-type: circle;
+                letter-spacing: 1px;
+                transition: all .2s linear;
+                padding: .85rem 0rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: #fff;
+                }
+
+                svg {
+                    font-size: 1rem;
+                }
+
+                span {
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+
+    .pending {
+        li {
+            color: rgba(148, 163, 184, 0.85) !important;
+        }
+    }
+
+    .active {
+        li {
+            color: #fff !important;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .sideActive {
+        transform: translate(0);
+    }
+}

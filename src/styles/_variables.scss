@@ -1,0 +1,40 @@
+:root {
+    --bgColor: #fff;
+    --mainBG: #F2F6F9;
+    --borderColor: #e2e8f0;
+
+    //common color
+    --primaryColor: #1e293b;
+    --rePrimaryColor: #fff;
+    --secondColor: #94a3b8;
+    --color-1: #475569;
+    --color-2: #334155;
+    --color-3: #808793;
+    --blue-1: #5a66f1;
+    --bgColor-1: #FDF7E6;
+    --bgColor-2: rgba(248, 250, 252, .75);
+    --bgColor-3: #242F4E;
+    --bwColor: #fff;
+    --light-bg: #F2F6F9;
+    --textColor: #475569;
+    --titleTxtColor: #64748b;
+    --green1: #22c55e;
+}
+
+.dark-mode {
+    --borderColor: rgba(255, 255, 255, 0.1);
+    --primaryColor: #ffffff;
+    --rePrimaryColor: #1e293b;
+    --bgColor: #1e293b;
+    --bwColor: #1e293b;
+    --mainBG: #293549;
+    --textColor: rgba(255, 255, 255, 0.9);
+    --secondColor: rgba(255, 255, 255, 0.8);
+    --titleTxtColor: rgba(255, 255, 255, 0.7);
+    --color-1: #fff;
+    --color-2: #94a3b8;
+    --color-3: #fff;
+    --bgColor-2: rgba(0, 0, 0, 0.2);
+}
+
+// color: var(--primaryColor);
